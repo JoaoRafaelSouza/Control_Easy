@@ -1,6 +1,5 @@
 name: CI/CD - Control Easy
 
-# 🚀 Disparar workflow apenas com push na branch main
 on:
   push:
     branches:
@@ -18,6 +17,8 @@ jobs:
     steps:
       - name: 🔁 Clonar repositório
         uses: actions/checkout@v3
+        with:
+          path: .
 
       - name: 🧰 Instalar Node.js
         uses: actions/setup-node@v3
@@ -40,6 +41,8 @@ jobs:
     steps:
       - name: 🔁 Clonar repositório
         uses: actions/checkout@v3
+        with:
+          path: .  # ← Adicionado aqui também!
 
       - name: 🐍 Configurar Python
         uses: actions/setup-python@v4
@@ -52,14 +55,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # - name: 🧪 Rodar testes (opcional)
-      #   working-directory: ./backend
-      #   run: pytest
-
   deploy:
     name: 🚀 Deploy (simulado)
     runs-on: ubuntu-latest
     needs: [build-frontend, build-backend]
+
     steps:
-    - name: ✅ Simulação de Deploy
-      run: echo "Deploy executado com sucesso na branch main!"
+      - name: ✅ Simulação de Deploy
+        run: echo "Deploy executado com sucesso na branch main!"
