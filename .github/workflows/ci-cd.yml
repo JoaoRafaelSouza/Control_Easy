@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - 'frontend/**'
-      - 'backend/**'
+      - 'Frontend/**'
+      - 'Backend/**'
       - '.github/workflows/**'
 
 jobs:
@@ -24,11 +24,11 @@ jobs:
           node-version: 18
 
       - name: 📦 Instalar dependências (npm install)
-        working-directory: ./frontend
+        working-directory: ./Frontend
         run: npm install
 
       - name: 🔨 Build do frontend (npm run build)
-        working-directory: ./frontend
+        working-directory: ./Frontend
         run: npm run build
 
   build-backend:
@@ -46,7 +46,7 @@ jobs:
           python-version: '3.10'
 
       - name: 📦 Instalar dependências do backend
-        working-directory: ./backend
+        working-directory: ./Backend
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
