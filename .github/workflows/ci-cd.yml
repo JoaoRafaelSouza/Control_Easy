@@ -59,4 +59,4 @@ jobs:
   deploy:
     name: 🚀 Deploy (simulado)
     runs-on: ubuntu-latest
-    needs: [build-frontend, build]()
+    needs: [build-frontend, build-backend]
