@@ -60,3 +60,6 @@ jobs:
     name: 🚀 Deploy (simulado)
     runs-on: ubuntu-latest
     needs: [build-frontend, build-backend]
+    steps:
+    - name: ✅ Simulação de Deploy
+      run: echo "Deploy executado com sucesso na branch main!"
