@@ -17,8 +17,6 @@ jobs:
     steps:
       - name: 🔁 Clonar repositório
         uses: actions/checkout@v3
-        with:
-          path: .
 
       - name: 🧰 Instalar Node.js
         uses: actions/setup-node@v3
@@ -41,8 +39,6 @@ jobs:
     steps:
       - name: 🔁 Clonar repositório
         uses: actions/checkout@v3
-        with:
-          path: .  # ← Adicionado aqui também!
 
       - name: 🐍 Configurar Python
         uses: actions/setup-python@v4
